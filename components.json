@@ -1,0 +1,22 @@
+{
+  "name": "xhr",
+  "repo": "matthewp/xhr",
+  "description": "Tiny, simple, xhr requests.",
+  "version": "0.0.1",
+  "keywords": [
+    "ajax",
+    "xmlhttprequest"
+    "xhr"
+  ],
+  "dependencies": {
+    "matthewp/xhrerror": "*",
+    "matthewp/keys": "*",
+    "yields/xhr": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "license": "MIT"
+}
