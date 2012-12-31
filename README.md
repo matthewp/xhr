@@ -48,25 +48,27 @@ If true, the ``withCredentials`` value will be applied to the XMLHttpRequest obj
 
 ## Examples
 
-    var xhr = require('xhr');
+```javascript
+var xhr = require('xhr');
 
-    var fooData = JSON.stringify({
-      foo: 'bar',
-      baz: 'qux'
-    });
+var fooData = JSON.stringify({
+  foo: 'bar',
+  baz: 'qux'
+});
 
-    xhr({
-      url: 'http://example.com/foos',
-      headers: {
-        'Content-Type': 'application/json',
-        'Content-Length': fooData.length
-      },
-      method: 'POST',
-      data: fooData
-    },
-      function onSuccess() {
-        console.log('It worked!');
-      },
-      function onError(err) {
-        console.log('There was an error: ' + err.message);
-      });
+xhr({
+  url: 'http://example.com/foos',
+  headers: {
+    'Content-Type': 'application/json',
+    'Content-Length': fooData.length
+  },
+  method: 'POST',
+  data: fooData
+},
+  function onSuccess() {
+    console.log('It worked!');
+  },
+  function onError(err) {
+    console.log('There was an error: ' + err.message);
+  });
+```
