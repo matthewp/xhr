@@ -34,9 +34,11 @@ The HTTP method to use (GET, POST, PUT, DELETE, etc.).  Defaults to ``GET``.
 
 An ``Object`` in which the keys are the header key and the values are the header value. Example
 
-    headers: {
-      'Accept': 'application/json'
-    }
+```javascript
+headers: {
+  'Accept': 'application/json'
+}
+```
 
 ##### data
 
