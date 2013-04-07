@@ -1,4 +1,4 @@
-var keys = require('keys'),
+var forIn = require('for-in'),
     xobj = require('xhr'),
     XhrError = require('xhrerror');
 
@@ -17,9 +17,8 @@ function xhr(options, callback, errback) {
     req.withCredentials = true;
   }
 
-  keys(options.headers || {
-  }).forEach(function (key) {
-    req.setRequestHeader(key, options.headers[key]);
+  forIn(options.headers || {}, function (value, key) {
+    req.setRequestHeader(key, value);
   });
 
   req.onload = function (e) {
