@@ -10,7 +10,7 @@
   ],
   "dependencies": {
     "matthewp/xhrerror": "*",
-    "matthewp/keys": "*",
+    "kewah/for-in": "*",
     "yields/xhr": "*"
   },
   "development": {},
