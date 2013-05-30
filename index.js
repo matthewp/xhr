@@ -20,8 +20,10 @@ function xhr(options, callback, errback) {
   forIn(options.headers || {}, function (value, key) {
     req.setRequestHeader(key, value);
   });
-
-  req.onload = function (e) {
+  
+  req.onreadystatechange = function() {  
+    if(req.readyState != 4) return;
+    
     if([
       200, 
       304, 
