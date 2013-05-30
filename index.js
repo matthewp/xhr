@@ -20,8 +20,10 @@ function xhr(options, callback, errback) {
   forIn(options.headers || {}, function (value, key) {
     req.setRequestHeader(key, value);
   });
-
-  req.onload = function (e) {
+  
+  req.onreadystatechange = function() {  
+    if(req.readyState != 4) return;
+    
     if([
       200, 
       304, 
@@ -29,7 +31,7 @@ function xhr(options, callback, errback) {
     ].indexOf(req.status) === -1) {
       (errback || noop)(new XhrError('Server responded with a status of ' + req.status, req.status));
     } else {
-      (callback || noop)(e.target);
+      (callback || noop)(req.responseText);
     }
   };
 
