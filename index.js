@@ -31,7 +31,7 @@ function xhr(options, callback, errback) {
     ].indexOf(req.status) === -1) {
       (errback || noop)(new XhrError('Server responded with a status of ' + req.status, req.status));
     } else {
-      (callback || noop)(req.responseText);
+      (callback || noop)(req);
     }
   };
 
