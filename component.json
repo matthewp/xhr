@@ -11,7 +11,8 @@
   "dependencies": {
     "matthewp/xhrerror": "*",
     "kewah/for-in": "*",
-    "yields/xhr": "*"
+    "yields/xhr": "*",
+    "component/indexof": "*"
   },
   "development": {},
   "scripts": [

@@ -1,5 +1,6 @@
 var forIn = require('for-in'),
     xobj = require('xhr'),
+    indexof = require('indexof'),
     XhrError = require('xhrerror');
 
 function noop() { }
@@ -20,15 +21,15 @@ function xhr(options, callback, errback) {
   forIn(options.headers || {}, function (value, key) {
     req.setRequestHeader(key, value);
   });
-  
-  req.onreadystatechange = function() {  
+
+  req.onreadystatechange = function() {
     if(req.readyState != 4) return;
-    
-    if([
-      200, 
-      304, 
+
+    if(indexof([
+      200,
+      304,
       0
-    ].indexOf(req.status) === -1) {
+    ], req.status) === -1) {
       (errback || noop)(new XhrError('Server responded with a status of ' + req.status, req.status));
     } else {
       (callback || noop)(req);
