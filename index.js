@@ -30,7 +30,7 @@ function xhr(options, callback, errback) {
       304,
       0
     ], req.status) === -1) {
-      (errback || noop)(new XhrError('Server responded with a status of ' + req.status, req.status));
+      (errback || noop)(new XhrError('Server responded with a status of ' + req.status, req.status, req));
     } else {
       (callback || noop)(req);
     }
