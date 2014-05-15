@@ -26,8 +26,11 @@ function xhr(options, callback, errback) {
     if(req.readyState != 4) return;
 
     if(indexof([
-      200,
-      304,
+      200, // OK
+      201, // Created
+      202, // Accepted
+      204, // No Content
+      304, // Not Modified
       0
     ], req.status) === -1) {
       (errback || noop)(new XhrError('Server responded with a status of ' + req.status, req.status, req));
