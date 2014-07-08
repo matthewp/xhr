@@ -27,8 +27,7 @@ function xhr(options, callback, errback) {
 
     if(indexof([
       200,
-      304,
-      0
+      304
     ], req.status) === -1) {
       (errback || noop)(new XhrError('Server responded with a status of ' + req.status, req.status, req));
     } else {
